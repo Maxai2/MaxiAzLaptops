@@ -1,0 +1,184 @@
+﻿<Window x:Class="MaxiAzLaptops.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MaxiAzLaptops"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="530" Width="650" WindowStartupLocation="CenterScreen">
+	<Grid>
+		<!--<Canvas>
+			<Polygon Canvas.Left="100" Canvas.Top="100" Points="0 0 25 0 50 -20 75 0 100 0 80 30 100 50 50 40 0 50 20 30 0 0" Stroke="Red"/>
+		</Canvas>-->
+
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+
+		<Grid Grid.Row="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="3*"/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+
+			<Menu Grid.Column="0">
+				<MenuItem Header="File">
+					<MenuItem Header="_Add" Click="MenuAdd_Click"/>
+					<MenuItem Header="_Save" Click="MenuSave_Click"/>
+					<MenuItem Header="Sa_ve as" Click="MenuSaveAs_Click"/>
+					<MenuItem Header="_Open"/>
+					<MenuItem Header="_Exit" Click="MenuExit_Click"/>
+				</MenuItem>
+			</Menu>
+
+			<Grid Grid.Column="1">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="3*"/>
+					<ColumnDefinition/>
+				</Grid.ColumnDefinitions>
+
+				<TextBox Grid.Column="0"/>
+				<Button Grid.Column="1" Content="🔍"/>
+			</Grid>
+
+		</Grid>
+
+		<ListBox Grid.Row="1" ItemsSource="{Binding Path=Goods}">
+			
+			<ListBox.ItemContainerStyle>
+				<Style TargetType="ListBoxItem">
+					<Setter Property="ContextMenu">
+						<Setter.Value>
+						<ContextMenu>
+
+								<MenuItem Header="Edit">
+									<MenuItem.Style>
+										<Style TargetType="MenuItem">
+											<EventSetter Event="Click" Handler="MenuEdit_Click"/>
+										</Style>
+									</MenuItem.Style>
+								</MenuItem>
+
+								<MenuItem Header="Delete">
+									<MenuItem.Style>
+										<Style TargetType="MenuItem">
+											<EventSetter Event="Click" Handler="MenuDelete_Click"/>
+										</Style>
+									</MenuItem.Style>
+								</MenuItem>
+							
+						</ContextMenu>
+						</Setter.Value>						
+					</Setter>
+				</Style>
+			</ListBox.ItemContainerStyle>
+
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition/>
+							<ColumnDefinition MinWidth="250"/>
+							<ColumnDefinition/>
+						</Grid.ColumnDefinitions>
+
+						<Image Grid.Column="0" Margin="5" Height="150" Width="150" Source="{Binding Path=ImageName}"/>
+
+						<Grid Grid.Column="1">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="20"/>
+								<RowDefinition/>
+							</Grid.RowDefinitions>
+
+							<Label Grid.Row="0" Content="Noutbook" Foreground="#C2B9BC" FontSize="10" FontFamily="Arial"/>
+
+							<Label Grid.Row="1" Content="{Binding Path=Name}" FontFamily="Arial" Foreground="#6972B6"/>
+
+							<WrapPanel Grid.Row="2" >
+								<Image Width="130" Height="130" Source="StarsIcon.png"/>
+							</WrapPanel>
+
+							<Grid Grid.Row="3">
+								<Grid.RowDefinitions>
+									<RowDefinition/>
+									<RowDefinition/>
+									<RowDefinition/>
+									<RowDefinition/>
+									<RowDefinition/>
+								</Grid.RowDefinitions>
+
+								<StackPanel Grid.Row="0" Orientation="Horizontal" >
+									<Label FontSize="12" Foreground="Gray" Content="• OS"/>
+									<Label FontSize="12" Foreground="Black" Content="{Binding Path=OS}"/>
+								</StackPanel> 
+
+								<StackPanel Grid.Row="1" Orientation="Horizontal" >
+									<Label FontSize="12" Foreground="Gray" Content="• RAM"/>
+									<Label FontSize="12" Foreground="Black" Content="{Binding Path=RAM}"/>
+									<Label Foreground="Black" Content="Gb" FontSize="12"/>
+								</StackPanel>
+
+								<StackPanel Grid.Row="2" Orientation="Horizontal" >
+									<Label FontSize="12" Foreground="Gray" Content="• Drive Capacity"/>
+									<Label FontSize="12" Foreground="Black" Content="{Binding Path=HDD}"/>
+									<Label Foreground="Black" Content="Gb" FontSize="12"/>
+								</StackPanel>
+
+								<StackPanel Grid.Row="3" Orientation="Horizontal" >
+									<Label FontSize="12" Foreground="Gray" Content="• Screen size"/>
+									<Label FontSize="12" Foreground="Black" Content="{Binding Path=ScreenSize}"/>
+									<Label Foreground="Black" Content="&quot;" FontSize="12"/>
+								</StackPanel>
+
+								<StackPanel Grid.Row="4" Orientation="Horizontal" >
+									<Label FontSize="12" Foreground="Gray" Content="• Veb Cam"/>
+									<Label FontSize="12" Foreground="Black" Content="{Binding Path=VebCam}"/>
+								</StackPanel>
+							</Grid>
+
+						</Grid>
+
+						<Grid Grid.Column="2" Background="#F8F8F8" Width="200" HorizontalAlignment="Right">
+							<Grid.RowDefinitions>
+								<RowDefinition/>
+								<RowDefinition/>
+								<RowDefinition/>
+								<RowDefinition/>
+							</Grid.RowDefinitions>
+
+							<StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+								<TextBlock TextDecorations="StrikeThrough" Text="{Binding Path=OldPrice}" Foreground="#9BABC3" VerticalAlignment="Center" FontSize="15"/>
+								<TextBlock Foreground="#9BABC3" Text="₼" TextDecorations="StrikeThrough" VerticalAlignment="Center" FontSize="15"/>
+								<Label Content="{Binding Path=NewPrice}" Foreground="#C10000" FontSize="20"/>
+								<Label Foreground="#C10000" Content="₼" FontSize="20"/>
+							</StackPanel>
+
+							<Border Grid.Row="1" Name="Border" CornerRadius="5" Margin="5" BorderThickness="3" Background="#D20F16" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Width="80">
+								<Button Content="Buy" BorderThickness="0" Foreground="White" Background="Transparent" Width="{Binding Border.Width}" Height="{Binding Border.Height}"/>
+							</Border>
+
+							<StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+								<Image Source="LibreIcon.png"/>
+								<Separator BorderThickness="3" BorderBrush="#E9EBEC" Width="20">
+									<Separator.LayoutTransform>
+										<RotateTransform Angle="90"/>
+									</Separator.LayoutTransform>
+								</Separator>
+								<Image Source="LikeIcon.png"/>
+							</StackPanel>
+
+							<Label Grid.Row="3" Foreground="#B1A8B1" Content="Learn more →" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+
+						</Grid>
+
+					</Grid>
+
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+
+		</ListBox>
+	</Grid>
+</Window>

@@ -1,0 +1,69 @@
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\MaxiAzLaptops\bin\Debug\MaxiAzLaptops.exe.config
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\MaxiAzLaptops\bin\Debug\MaxiAzLaptops.exe
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\MaxiAzLaptops\bin\Debug\MaxiAzLaptops.pdb
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.csprojResolveAssemblyReference.cache
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MainWindow.g.cs
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\App.g.cs
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops_MarkupCompile.cache
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops_MarkupCompile.lref
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MainWindow.baml
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.g.resources
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.Properties.Resources.resources
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.csproj.GenerateResource.Cache
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.csproj.CoreCompileInputs.cache
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.exe
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.pdb
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\bin\Debug\MaxiAzLaptops.exe.config
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\bin\Debug\MaxiAzLaptops.exe
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\bin\Debug\MaxiAzLaptops.pdb
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.csprojResolveAssemblyReference.cache
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MainWindow.g.cs
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\App.g.cs
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops_MarkupCompile.cache
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops_MarkupCompile.lref
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MainWindow.baml
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.g.resources
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.Properties.Resources.resources
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.csproj.GenerateResource.Cache
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.csproj.CoreCompileInputs.cache
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.exe
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.pdb
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\bin\Debug\MaxiAzLaptops.exe.config
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\bin\Debug\MaxiAzLaptops.exe
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\bin\Debug\MaxiAzLaptops.pdb
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.csprojResolveAssemblyReference.cache
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MainWindow.g.cs
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\App.g.cs
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops_MarkupCompile.cache
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops_MarkupCompile.lref
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MainWindow.baml
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.g.resources
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.Properties.Resources.resources
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.csproj.GenerateResource.Cache
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.csproj.CoreCompileInputs.cache
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.exe
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.pdb
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\AddEditWin.g.cs
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\App.baml
+C:\Users\Mahm_iz81\Source\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\AddEditWin.baml
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\AddEditWin.g.cs
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\AddEditWin.baml
+C:\Users\Ali\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\App.baml
+D:\Joker\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\bin\Debug\MaxiAzLaptops.exe.config
+D:\Joker\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\bin\Debug\MaxiAzLaptops.exe
+D:\Joker\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\bin\Debug\MaxiAzLaptops.pdb
+D:\Joker\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\AddEditWin.g.cs
+D:\Joker\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MainWindow.g.cs
+D:\Joker\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\App.g.cs
+D:\Joker\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops_MarkupCompile.cache
+D:\Joker\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops_MarkupCompile.lref
+D:\Joker\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\App.baml
+D:\Joker\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\AddEditWin.baml
+D:\Joker\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MainWindow.baml
+D:\Joker\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.g.resources
+D:\Joker\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.Properties.Resources.resources
+D:\Joker\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.csproj.GenerateResource.cache
+D:\Joker\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.csproj.CoreCompileInputs.cache
+D:\Joker\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.exe
+D:\Joker\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.pdb
+D:\Joker\Documents\Visual Studio 2017\Repos\MaxiAzLaptops\MaxiAzLaptops\obj\Debug\MaxiAzLaptops.csprojResolveAssemblyReference.cache
