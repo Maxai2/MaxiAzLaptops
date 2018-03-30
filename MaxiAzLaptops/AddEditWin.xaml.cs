@@ -31,16 +31,16 @@ namespace MaxiAzLaptops
 
             if (laptop != null)
             {
-                tbName.Text      = laptop.Name;
-                tbOS.Text        = laptop.OS;
-                tbRAM.Text       = laptop.RAM;
-                tbHDD.Text       = laptop.HDD;
-                tbScrSize.Text   = laptop.ScreenSize;
-                tbOldP.Text      = laptop.OldPrice;
-                tbNewP.Text      = laptop.NewPrice;
-                tbVebCam.Text    = laptop.VebCam;
+                tbName.Text = laptop.Name;
+                tbOS.Text = laptop.OS;
+                tbRAM.Text = laptop.RAM;
+                tbHDD.Text = laptop.HDD;
+                tbScrSize.Text = laptop.ScreenSize;
+                tbOldP.Text = laptop.OldPrice;
+                tbNewP.Text = laptop.NewPrice;
+                tbVebCam.Text = laptop.VebCam;
                 tbImagePath.Text = laptop.ImageName;
-            } 
+            }
         }
 
         private void ButtonOpen_Click(object sender, RoutedEventArgs e)
@@ -57,39 +57,44 @@ namespace MaxiAzLaptops
         private void ButtonOk_Click(object sender, RoutedEventArgs e)
         {
             if (tbName.Text == "" && tbImagePath.Text == "")
-                Close();
-
-            if (laptop == null)
             {
-                laptop = new Laptop
-                {
-                    Name       = tbName.Text,
-                    OS         = tbOS.Text,
-                    RAM        = tbRAM.Text,
-                    HDD        = tbHDD.Text,
-                    ScreenSize = tbScrSize.Text,
-                    VebCam     = tbVebCam.Text,
-                    OldPrice   = tbOldP.Text,
-                    NewPrice   = tbNewP.Text,
-                    ImageName  = tbImagePath.Text
-                };
+                DialogResult = false;
+                Close();
             }
             else
             {
-                laptop.Name       = tbName.Text;
-                laptop.OS         = tbOS.Text;
-                laptop.RAM        = tbRAM.Text;
-                laptop.HDD        = tbHDD.Text;
-                laptop.ScreenSize = tbScrSize.Text;
-                laptop.OldPrice   = tbOldP.Text;
-                laptop.NewPrice   = tbNewP.Text;
-                laptop.VebCam     = tbVebCam.Text;
-                laptop.ImageName  = tbImagePath.Text;
+                if (laptop == null)
+                {
+                    laptop = new Laptop
+                    {
+                        Name = tbName.Text,
+                        OS = tbOS.Text,
+                        RAM = tbRAM.Text,
+                        HDD = tbHDD.Text,
+                        ScreenSize = tbScrSize.Text,
+                        VebCam = tbVebCam.Text,
+                        OldPrice = tbOldP.Text,
+                        NewPrice = tbNewP.Text,
+                        ImageName = tbImagePath.Text
+                    };
+                }
+                else
+                {
+                    laptop.Name = tbName.Text;
+                    laptop.OS = tbOS.Text;
+                    laptop.RAM = tbRAM.Text;
+                    laptop.HDD = tbHDD.Text;
+                    laptop.ScreenSize = tbScrSize.Text;
+                    laptop.OldPrice = tbOldP.Text;
+                    laptop.NewPrice = tbNewP.Text;
+                    laptop.VebCam = tbVebCam.Text;
+                    laptop.ImageName = tbImagePath.Text;
+                }
+
+                DialogResult = true;
+
+                Close();
             }
-
-            DialogResult = true;
-
-            Close();
         }
 
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)

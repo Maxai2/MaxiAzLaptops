@@ -30,6 +30,8 @@ namespace MaxiAzLaptops
         OpenFileDialog openFileDialog;
         SaveFileDialog saveFileDialog;
 
+        public List<string> listForSearch { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -43,39 +45,32 @@ namespace MaxiAzLaptops
 
             Goods = new ObservableCollection<Laptop>();
 
-            //Goods = new ObservableCollection<Laptop>()
-            //{
-            //    new Laptop()
-            //    {
-            //        Name = "Lenovo IP 110-15IBR 15.6\"",
-            //        OS = "DOS", 
-            //        RAM = "4 Gb",
-            //        HDD = "500 Gb",
-            //        ScreenSize = "15.6\"",
-            //        VebCam = "have",
-            //        OldPrice = "559.9₼",
-            //        NewPrice = "529.9₼",
-            //        ImageName = "LenovoLaptopPic.png"
-            //    },
+            listForSearch = new List<string>()
+            {
+                "Name",
+                "OS",
+                "Ram",
+                "HDD",
+                "Screen size",
+                "Veb cam",
+                "Old price",
+                "New price"
+            };
 
-            //    new Laptop()
-            //    {
-            //        Name = "Acer EX2519-C298 15.6\"",
-            //        OS = "DOS",
-            //        RAM = "4 Gb",
-            //        HDD = "500 Gb",
-            //        ScreenSize = "15.6\"",
-            //        VebCam = "have",
-            //        OldPrice = "559.9₼",
-            //        NewPrice = "529.9₼",
-            //        ImageName = "AcerLaptopPic.png"
-            //    }
-            //};
         }
         //-------------------------------------------
         private void MenuExit_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            MessageBoxResult result = MessageBox.Show("Are u sure?", "", MessageBoxButton.YesNo);
+
+            switch (result)
+            {
+                case MessageBoxResult.Yes:
+                    this.Close();
+                    break;
+                case MessageBoxResult.No:
+                    break;
+            }
         }
         //-------------------------------------------
         private void MenuAdd_Click(object sender, RoutedEventArgs e)
@@ -84,15 +79,15 @@ namespace MaxiAzLaptops
 
             if (win.ShowDialog() == true)
             {
-                this.Goods.Add(win.laptop); 
+                this.Goods.Add(win.laptop);
             }
         }
         //-------------------------------------------
         private void MenuEdit_Click(object sender, RoutedEventArgs e)
         {
-            var item = sender as Laptop;
+            int num = lbItems.SelectedIndex;
 
-            int num = (sender as ListBox).SelectedIndex;
+            var item = Goods[num];
 
             var win = new AddEditWin(item) { Owner = this };
 
@@ -119,51 +114,169 @@ namespace MaxiAzLaptops
             switch (result)
             {
                 case MessageBoxResult.Yes:
-
+                    int num = lbItems.SelectedIndex;
+                    Goods.RemoveAt(num);
                     break;
-                case MessageBoxResult.None:
                 case MessageBoxResult.No:
                     break;
             }
         }
         //-------------------------------------------
-        void Save(bool save)
+        void Save(bool saveAs)
         {
-            if (save)
+            XDocument xdocWrite = xdocWrite = new XDocument(new XElement("Laptops")); //new XDeclaration("1.0", "utf-8", "yes")
+
+            if (saveAs)
             {
+
                 if (saveFileDialog.ShowDialog() == true)
                 {
-                    XDocument xdocWrite = new XDocument(new XElement("Tasks")); //new XDeclaration("1.0", "utf-8", "yes")
 
                     foreach (var item in Goods)
                     {
-                        xdocWrite.Root.Add(new XElement("task", new XElement("name", item.Name),     // new XAttribute("Id", item.Id)
-                                                            new XElement("OS", item.OS),
-                                                            new XElement("RAM", item.RAM),
-                                                            new XElement("HDD", item.HDD)),
-                                                            new XElement("Screen size", item.ScreenSize),
-                                                            new XElement("Veb cam", item.VebCam),
-                                                            new XElement("Old price", item.OldPrice),
-                                                            new XElement("New price", item.NewPrice),
-                                                            new XElement("ImageName", item.ImageName));
+                        xdocWrite.Root.Add(new XElement("laptop", new XElement("Name", item.Name),     // new XAttribute("Id", item.Id)
+                                                                new XElement("OS", item.OS),
+                                                                new XElement("RAM", item.RAM),
+                                                                new XElement("HDD", item.HDD),
+                                                                new XElement("ScreenSize", item.ScreenSize),
+                                                                new XElement("VebCam", item.VebCam),
+                                                                new XElement("OldPrice", item.OldPrice),
+                                                                new XElement("NewPrice", item.NewPrice),
+                                                                new XElement("ImageName", item.ImageName)
+                                                                ));
                     }
+
+                    CurrentDir = saveFileDialog.FileName;
 
                     xdocWrite.Save(saveFileDialog.FileName);
                 }
-
             }
+            else
+            {
+                foreach (var item in Goods)
+                {
+                    xdocWrite.Root.Add(new XElement("laptop", new XElement("Name", item.Name),     // new XAttribute("Id", item.Id)
+                                                            new XElement("OS", item.OS),
+                                                            new XElement("RAM", item.RAM),
+                                                            new XElement("HDD", item.HDD),
+                                                            new XElement("ScreenSize", item.ScreenSize),
+                                                            new XElement("VebCam", item.VebCam),
+                                                            new XElement("OldPrice", item.OldPrice),
+                                                            new XElement("NewPrice", item.NewPrice),
+                                                            new XElement("ImageName", item.ImageName)
+                                                            ));
+                }
 
-
+                xdocWrite.Save(CurrentDir);
+            }
         }
         //-------------------------------------------
         private void MenuSave_Click(object sender, RoutedEventArgs e)
         {
-
+            if (Goods.Count != 0)
+            {
+                if (CurrentDir != "")
+                    Save(true);
+                else
+                    Save(false);
+            }
+            else
+                MessageBox.Show("No Laptop to save!");
         }
         //-------------------------------------------
         private void MenuSaveAs_Click(object sender, RoutedEventArgs e)
         {
+            if (Goods.Count != 0)
+                Save(true);
+            else
+                MessageBox.Show("No Laptop to save!");
+        }
+        //-------------------------------------------
+        private void MenuOpen_Click(object sender, RoutedEventArgs e)
+        {
+            if (Goods.Count != 0)
+            {
+                if (CurrentDir != "")
+                    Save(false);
+                else
+                    Save(true);
 
+                Goods.Clear();
+            }
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                CurrentDir = openFileDialog.FileName;
+
+                XDocument xdocRead = XDocument.Load(CurrentDir);
+
+                foreach (XElement item in xdocRead.Root.Elements())
+                {
+                    Laptop laptop = new Laptop()
+                    {
+                        Name = item.Element("Name").Value,                 /* XElement("Name", item.Name*/
+                        OS = item.Element("OS").Value,                     /*Element("OS", item.OS),*/
+                        RAM = item.Element("RAM").Value,                   /*Element("RAM", item.RAM),*/
+                        HDD = item.Element("HDD").Value,                   /*Element("HDD", item.HDD)),*/
+                        ScreenSize = item.Element("ScreenSize").Value,     /*Element("ScreenSize", item.*/
+                        VebCam = item.Element("VebCam").Value,             /*Element("VebCam", item.VebC*/
+                        OldPrice = item.Element("OldPrice").Value,         /*Element("OldPrice", item.Ol*/
+                        NewPrice = item.Element("NewPrice").Value,         /*Element("NewPrice", item.Ne*/
+                        ImageName = item.Element("ImageName").Value        /*Element("ImageName", item.I*/
+                    };
+
+                    Goods.Add(laptop);
+                }
+            }
+        }
+
+        public ObservableCollection<Laptop> SearchesLaptop = new ObservableCollection<Laptop>();
+
+        //-------------------------------------------
+        private void ButtonSearch_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (var item in Goods)
+            {
+                if (item.Name.Contains(tbSearchText.Text))
+                {
+                    SearchesLaptop.Add(item);
+                }
+                else
+                if (item.OS.Contains(tbSearchText.Text))
+                {
+                    SearchesLaptop.Add(item);
+                }
+                else
+                if (item.RAM.Contains(tbSearchText.Text))
+                {
+                    SearchesLaptop.Add(item);
+                }
+                else
+                if (item.HDD.Contains(tbSearchText.Text))
+                {
+                    SearchesLaptop.Add(item);
+                }
+                else
+                if (item.ScreenSize.Contains(tbSearchText.Text))
+                {
+                    SearchesLaptop.Add(item);
+                }
+                else
+                if (item.OldPrice.Contains(tbSearchText.Text))
+                {
+                    SearchesLaptop.Add(item);
+                }
+                else
+                if (item.NewPrice.Contains(tbSearchText.Text))
+                {
+                    SearchesLaptop.Add(item);
+                }
+                else
+                if (item.VebCam.Contains(tbSearchText.Text))
+                {
+                    SearchesLaptop.Add(item);
+                }
+            }
         }
         //-------------------------------------------
     }
