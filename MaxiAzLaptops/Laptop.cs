@@ -80,7 +80,7 @@ namespace MaxiAzLaptops
         public string OldPrice
         {
             get { return oldprice; }
-            set
+            set 
             {
                 oldprice = value;
                 OnChanged();

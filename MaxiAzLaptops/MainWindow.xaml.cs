@@ -30,7 +30,9 @@ namespace MaxiAzLaptops
         OpenFileDialog openFileDialog;
         SaveFileDialog saveFileDialog;
 
-        public List<string> listForSearch { get; set; }
+        public ObservableCollection<Laptop> SearchContainer;
+
+        public ObservableCollection<string> listForSearch { get; set; }
 
         public MainWindow()
         {
@@ -45,11 +47,13 @@ namespace MaxiAzLaptops
 
             Goods = new ObservableCollection<Laptop>();
 
-            listForSearch = new List<string>()
+            SearchContainer = new ObservableCollection<Laptop>();
+
+            listForSearch = new ObservableCollection<string>()
             {
                 "Name",
                 "OS",
-                "Ram",
+                "RAM",
                 "HDD",
                 "Screen size",
                 "Veb cam",
@@ -93,17 +97,7 @@ namespace MaxiAzLaptops
 
             if (win.ShowDialog() == true)
             {
-                var temp = win.laptop;
-
-                Goods[num].Name = temp.Name;
-                Goods[num].OS = temp.OS;
-                Goods[num].RAM = temp.RAM;
-                Goods[num].HDD = temp.HDD;
-                Goods[num].ScreenSize = temp.ScreenSize;
-                Goods[num].NewPrice = temp.NewPrice;
-                Goods[num].OldPrice = temp.OldPrice;
-                Goods[num].VebCam = temp.VebCam;
-                Goods[num].ImageName = temp.ImageName;
+                Goods[num] = win.laptop;
             }
         }
         //-------------------------------------------
@@ -114,8 +108,7 @@ namespace MaxiAzLaptops
             switch (result)
             {
                 case MessageBoxResult.Yes:
-                    int num = lbItems.SelectedIndex;
-                    Goods.RemoveAt(num);
+                    Goods.RemoveAt(lbItems.SelectedIndex);
                     break;
                 case MessageBoxResult.No:
                     break;
@@ -229,54 +222,68 @@ namespace MaxiAzLaptops
                 }
             }
         }
-
-        public ObservableCollection<Laptop> SearchesLaptop = new ObservableCollection<Laptop>();
-
         //-------------------------------------------
         private void ButtonSearch_Click(object sender, RoutedEventArgs e)
         {
-            foreach (var item in Goods)
+            if (Goods.Count == 0)
             {
-                if (item.Name.Contains(tbSearchText.Text))
-                {
-                    SearchesLaptop.Add(item);
-                }
-                else
-                if (item.OS.Contains(tbSearchText.Text))
-                {
-                    SearchesLaptop.Add(item);
-                }
-                else
-                if (item.RAM.Contains(tbSearchText.Text))
-                {
-                    SearchesLaptop.Add(item);
-                }
-                else
-                if (item.HDD.Contains(tbSearchText.Text))
-                {
-                    SearchesLaptop.Add(item);
-                }
-                else
-                if (item.ScreenSize.Contains(tbSearchText.Text))
-                {
-                    SearchesLaptop.Add(item);
-                }
-                else
-                if (item.OldPrice.Contains(tbSearchText.Text))
-                {
-                    SearchesLaptop.Add(item);
-                }
-                else
-                if (item.NewPrice.Contains(tbSearchText.Text))
-                {
-                    SearchesLaptop.Add(item);
-                }
-                else
-                if (item.VebCam.Contains(tbSearchText.Text))
-                {
-                    SearchesLaptop.Add(item);
-                }
+                tbSearch.IsChecked = false;
+                return;
             }
+
+            if (tbSearch.IsChecked == true)
+            {
+                SearchContainer.Clear();
+
+                int length = Goods.Count;
+
+                foreach (var item in Goods)
+                {
+                    switch (cbFindParam.SelectedItem)
+                    {
+                        case "Name":
+                            if (item.Name.Contains(tbSearchText.Text))
+                                SearchContainer.Add(item);
+                            break;
+                        case "OS":
+                            if (item.OS.Contains(tbSearchText.Text))
+                                SearchContainer.Add(item);
+                            break; 
+                        case "RAM":
+                            if (item.RAM.Contains(tbSearchText.Text))
+                                SearchContainer.Add(item);
+                            break;
+                        case "HDD":
+                            if (item.HDD.Contains(tbSearchText.Text))
+                                SearchContainer.Add(item);
+                            break;
+                        case "Screen size":
+                            if (item.ScreenSize.Contains(tbSearchText.Text))
+                                SearchContainer.Add(item);
+                            break;
+                        case "Old price":
+                            if (item.OldPrice.Contains(tbSearchText.Text))
+                                SearchContainer.Add(item);
+                            break;
+                        case "New price":
+                            if (item.NewPrice.Contains(tbSearchText.Text))
+                                SearchContainer.Add(item);
+                            break;
+                        case "Veb cam":
+                            if (item.VebCam.Contains(tbSearchText.Text))
+                                SearchContainer.Add(item);
+                            break;
+                    }
+                }
+
+                lbItems.ItemsSource = SearchContainer;
+            }
+            else
+            {
+                lbItems.ItemsSource = Goods;
+            }
+
+            //lbItems.Items.Refresh();
         }
         //-------------------------------------------
     }

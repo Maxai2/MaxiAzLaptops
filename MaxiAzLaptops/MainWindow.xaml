@@ -39,18 +39,13 @@
 					<ColumnDefinition/>
 				</Grid.ColumnDefinitions>
 
-				<ComboBox Grid.Column="0" ItemsSource="{Binding ElementName=listForSearch}">
-					<DataTemplate>
-						<ComboBoxItem Content="{Binding}"/>
-					</DataTemplate>
-				</ComboBox>
-				
-				<TextBox Name="tbSearchText" Grid.Column="1"/>
-				
-				<Button Grid.Column="2" Content="🔍" Click="ButtonSearch_Click"/>
-				
-			</Grid>
+				<ComboBox Name="cbFindParam" Grid.Column="0" ItemsSource="{Binding listForSearch}" SelectedIndex="0"/>
 
+				<TextBox Name="tbSearchText" Grid.Column="1"/>
+
+				<ToggleButton Grid.Column="2" Name="tbSearch" Content="🔍" Click="ButtonSearch_Click"/>
+ 
+			</Grid>
 		</Grid>
 
 		<ListBox Grid.Row="1" Name="lbItems" ItemsSource="{Binding Path=Goods}">
